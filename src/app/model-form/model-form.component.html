@@ -1,0 +1,61 @@
+<div class="main">
+	<div class="container">
+		<form [formGroup]="myForm">
+			<div class="profile" *ngFor="let profile of myForm.controls; let i=index" [formGroupName]="i">
+				<h2>基本資料</h2>
+				<div class="form-group">
+					<label for="">名字</label>
+					<input type="text" id="name" formControlName="userName" class="form-control">
+					<div *ngIf="profile.controls.userName.errors" class="alert alert-danger">
+						<span *ngIf="profile.controls.userName.valid">合格</span>
+						<span *ngIf="profile.controls.userName.errors.required">必填項目</span>
+						<span *ngIf="profile.controls.userName.errors.minlength">欄位長度不足</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="">Email</label>
+					<input type="text" id="email" formControlName="email" class="form-control">
+					<div *ngIf="profile.controls.email.errors" class="alert alert-danger">
+						<span *ngIf="profile.controls.email.valid">合格</span>
+						<span *ngIf="profile.controls.email.errors.required">必填項目</span>
+						<span *ngIf="profile.controls.email.errors.pattern">請輸入正確的 email</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="">電話</label>
+					<input type="text" id="phone" formControlName="phone" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="">生日</label>
+					<input type="date" id="birthday" formControlName="birthday" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="">喜歡的數字</label>
+					<input type="number" id="likenumber" formControlName="likenumber" class="form-control">
+				</div>
+
+				<h3>選擇興趣</h3>
+
+				<div class="form-group" formGroupName="interest">
+					<label for=""><input type="checkbox" id="cbx_movie" formControlName="cbx_movie" value="movie" />電影</label>
+					<label for=""><input type="checkbox" id="cbx_badminton" formControlName="cbx_badminton" value="badminton" />羽球</label>
+					<label for=""><input type="checkbox" id="cbx_photography" formControlName="cbx_photography" value="photography" />攝影</label>
+					<label for=""><input type="checkbox" id="cbx_drum" formControlName="cbx_drum" value="drum">爵士鼓</label>
+				</div>
+
+				<h3>性別</h3>
+				<div class="form-group">
+					<label for=""><input type="radio" id="rdo_male" formControlName="sex" value="male" />男</label>
+					<label for=""><input type="radio" id="rdo_female" formControlName="sex" value="female" />女</label>
+				</div>
+				<button class="btn btn-default" type="button" (click)="add()">下一位</button>
+			</div>
+		</form>
+		<button class="btn btn-warning" type="button" (click)="showDataJson()">看資料!</button>
+	</div>
+</div>
+
+
+<pre *ngIf="preCount">
+	{{ myForm.value | json }}
+</pre>
