@@ -9,12 +9,14 @@ import { Angular2FormRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ModelFormComponent } from './model-form/model-form.component';
+import { BinaryPipe } from './binary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ModelFormComponent
+    ModelFormComponent,
+    BinaryPipe
   ],
   imports: [
     BrowserModule,

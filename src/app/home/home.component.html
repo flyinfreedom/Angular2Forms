@@ -1,3 +1,25 @@
-<p>
-  home works!
-</p>
+<div class="main">
+	<div class="container">
+		<h2 [innerHTML]="message"></h2>
+
+		<div class="col-md-4">
+			<p>Today is {{ today | date:format }}</p>
+			<button class="btn btn-primary" (click)="toggleFormat()">Toggle Format</button>
+		</div>
+
+		<div class="col-md-4 convertBinary">
+			<p>Key In A Number, It Can Convert A Number To Binary</p>
+			<input type="number" class="form-control" #convertB />
+			<div>
+				<button class="btn btn-primary" (click)="ConvertBinary(convertB.value)">Convert</button>
+			</div>
+			<div>
+				{{ ConvertToBinary | binary }}
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+
+		<div class="col-md-12">
+		</div>
+	</div>
+</div>
