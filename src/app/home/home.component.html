@@ -17,7 +17,24 @@
 				{{ ConvertToBinary | binary }}
 			</div>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<p>Here I used ng-content</p>
+			<app-card>
+				<div card-header>
+					New <strong>Header</strong>
+				</div>
+
+				<div class="card-block modal-body" card-body>
+					<h4 class="card-title">You can put any content here</h4>
+					<p class="card-text">For example this line of text and</p>
+					<a href="#" class="btn btn-primary">This button</a>
+				</div>
+
+				<div card-footer>
+					New <strong>footer</strong>
+				</div>
+			</app-card>
+		</div>
 
 		<div class="col-md-12">
 		</div>

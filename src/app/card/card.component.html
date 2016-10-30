@@ -1,0 +1,14 @@
+<div class="card modal-content">
+	<div class="card-header modal-header">
+		<!-- header slot here -->
+		<ng-content select="[card-header]"></ng-content>
+	</div>
+	<div class="card-header modal-body">
+		<!-- body slot here -->
+		<ng-content select="[card-body]"></ng-content>
+	</div>
+	<div class="card-footer modal-footer">
+		<!-- footer -->
+		<ng-content select="[card-footer]"></ng-content>
+	</div>
+</div>
